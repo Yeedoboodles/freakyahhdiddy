@@ -1,427 +1,586 @@
--- Gui to Lua
--- Version: 3.2
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
 
--- Instances:
+-- Instances: 61 | Scripts: 10 | Modules: 1 | Tags: 0
+local G2L = {};
 
-local GUI = Instance.new("ScreenGui")
-local OpenClose = Instance.new("TextButton")
-local UICorner = Instance.new("UICorner")
-local Frame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local UICorner_2 = Instance.new("UICorner")
-local Disabler = Instance.new("TextButton")
-local UICorner_3 = Instance.new("UICorner")
-local Config = Instance.new("Folder")
-local Config_2 = Instance.new("Frame")
-local UICorner_4 = Instance.new("UICorner")
-local UIListLayout = Instance.new("UIListLayout")
-local Speed = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local Config_3 = Instance.new("Folder")
-local Fly = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local Config_4 = Instance.new("Folder")
-local disableer2 = Instance.new("TextButton")
-local UICorner_7 = Instance.new("UICorner")
-local Config_5 = Instance.new("Folder")
-local Notifies = Instance.new("Frame")
-local UIListLayout_2 = Instance.new("UIListLayout")
-local NotificationTemplate = Instance.new("Frame")
-local UIGradient = Instance.new("UIGradient")
-local TextLabel_2 = Instance.new("TextLabel")
-local UICorner_8 = Instance.new("UICorner")
-local AdvanceFly = Instance.new("Frame")
-local Flight = Instance.new("TextLabel")
-local UICorner_9 = Instance.new("UICorner")
-local UP = Instance.new("TextButton")
-local UICorner_10 = Instance.new("UICorner")
-local DOWN = Instance.new("TextButton")
-local UICorner_11 = Instance.new("UICorner")
-local speedText = Instance.new("TextLabel")
-local speed = Instance.new("TextBox")
-local disable = Instance.new("TextButton")
-local UICorner_12 = Instance.new("UICorner")
-local Disabling = Instance.new("Frame")
-local ScrollingFrame = Instance.new("ScrollingFrame")
-local UIListLayout_3 = Instance.new("UIListLayout")
-local TextButton = Instance.new("TextButton")
+-- StarterGui.GUI
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[GUI]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
---Properties:
 
-GUI.Name = "GUI"
-GUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+-- StarterGui.GUI.OpenClose
+G2L["2"] = Instance.new("TextButton", G2L["1"]);
+G2L["2"]["TextWrapped"] = true;
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["TextSize"] = 14;
+G2L["2"]["TextScaled"] = true;
+G2L["2"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(182, 186, 186);
+G2L["2"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["2"]["Size"] = UDim2.new(0, 54, 0, 54);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Text"] = [[:D]];
+G2L["2"]["Name"] = [[OpenClose]];
+G2L["2"]["Position"] = UDim2.new(0.65636, 0, 0, 0);
 
-OpenClose.Name = "OpenClose"
-OpenClose.Parent = GUI
-OpenClose.BackgroundColor3 = Color3.fromRGB(181, 185, 185)
-OpenClose.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OpenClose.BorderSizePixel = 0
-OpenClose.Position = UDim2.new(0.656357408, 0, 0, 0)
-OpenClose.Size = UDim2.new(0, 54, 0, 54)
-OpenClose.Font = Enum.Font.SourceSansBold
-OpenClose.Text = ":D"
-OpenClose.TextColor3 = Color3.fromRGB(0, 0, 0)
-OpenClose.TextScaled = true
-OpenClose.TextSize = 14.000
-OpenClose.TextWrapped = true
 
-UICorner.Parent = OpenClose
+-- StarterGui.GUI.OpenClose.UICorner
+G2L["3"] = Instance.new("UICorner", G2L["2"]);
 
-Frame.Parent = GUI
-Frame.Active = true
-Frame.BackgroundColor3 = Color3.fromRGB(31, 41, 52)
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(0.250360578, 0, 0.170656279, 0)
-Frame.Size = UDim2.new(0, 382, 0, 459)
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Size = UDim2.new(0, 159, 0, 50)
-TextLabel.Font = Enum.Font.SourceSansBold
-TextLabel.Text = "Sigma Jello 5.0"
-TextLabel.TextColor3 = Color3.fromRGB(0, 255, 28)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
 
-UICorner_2.Parent = Frame
+-- StarterGui.GUI.OpenClose.LocalScript
+G2L["4"] = Instance.new("LocalScript", G2L["2"]);
 
-Disabler.Name = "Disabler"
-Disabler.Parent = Frame
-Disabler.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
-Disabler.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Disabler.BorderSizePixel = 0
-Disabler.Position = UDim2.new(0.0413546748, 0, 0.652474582, 0)
-Disabler.Size = UDim2.new(0, 120, 0, 41)
-Disabler.Font = Enum.Font.SourceSans
-Disabler.Text = "Disabler"
-Disabler.TextColor3 = Color3.fromRGB(0, 0, 0)
-Disabler.TextSize = 33.000
-Disabler.TextWrapped = true
 
-UICorner_3.Parent = Disabler
 
-Config.Name = "Config"
-Config.Parent = Disabler
+-- StarterGui.GUI.Frame
+G2L["5"] = Instance.new("Frame", G2L["1"]);
+G2L["5"]["Active"] = true;
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(32, 42, 53);
+G2L["5"]["Size"] = UDim2.new(0, 382, 0, 459);
+G2L["5"]["Position"] = UDim2.new(0.25036, 0, 0.17066, 0);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
-Config_2.Name = "Config"
-Config_2.Parent = Frame
-Config_2.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
-Config_2.BackgroundTransparency = 0.300
-Config_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Config_2.BorderSizePixel = 0
-Config_2.Position = UDim2.new(0.414584965, 0, 0.249424547, 0)
-Config_2.Size = UDim2.new(0, 206, 0, 324)
 
-UICorner_4.Parent = Config_2
+-- StarterGui.GUI.Frame.TextLabel
+G2L["6"] = Instance.new("TextLabel", G2L["5"]);
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextScaled"] = true;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["6"]["TextColor3"] = Color3.fromRGB(0, 255, 29);
+G2L["6"]["BackgroundTransparency"] = 1;
+G2L["6"]["RichText"] = true;
+G2L["6"]["Size"] = UDim2.new(0, 159, 0, 50);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[Sigma Jello 5.0]];
 
-UIListLayout.Parent = Config_2
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-Speed.Name = "Speed"
-Speed.Parent = Frame
-Speed.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
-Speed.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Speed.BorderSizePixel = 0
-Speed.Position = UDim2.new(0.0423556007, 0, 0.757592499, 0)
-Speed.Size = UDim2.new(0, 110, 0, 41)
-Speed.Font = Enum.Font.SourceSans
-Speed.Text = "Speed"
-Speed.TextColor3 = Color3.fromRGB(0, 0, 0)
-Speed.TextSize = 33.000
-Speed.TextWrapped = true
+-- StarterGui.GUI.Frame.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["5"]);
 
-UICorner_5.Parent = Speed
 
-Config_3.Name = "Config"
-Config_3.Parent = Speed
 
-Fly.Name = "Fly"
-Fly.Parent = Frame
-Fly.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
-Fly.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Fly.BorderSizePixel = 0
-Fly.Position = UDim2.new(0.0423556007, 0, 0.865372539, 0)
-Fly.Size = UDim2.new(0, 110, 0, 41)
-Fly.Font = Enum.Font.SourceSans
-Fly.Text = "Flight"
-Fly.TextColor3 = Color3.fromRGB(0, 0, 0)
-Fly.TextSize = 33.000
-Fly.TextWrapped = true
+-- StarterGui.GUI.Frame.Disabler
+G2L["8"] = Instance.new("TextButton", G2L["5"]);
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextSize"] = 33;
+G2L["8"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(152, 152, 155);
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["Size"] = UDim2.new(0, 120, 0, 41);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[Disabler]];
+G2L["8"]["Name"] = [[Disabler]];
+G2L["8"]["Position"] = UDim2.new(0.04135, 0, 0.65247, 0);
 
-UICorner_6.Parent = Fly
 
-Config_4.Name = "Config"
-Config_4.Parent = Fly
+-- StarterGui.GUI.Frame.Disabler.UICorner
+G2L["9"] = Instance.new("UICorner", G2L["8"]);
 
-disableer2.Name = "disableer2"
-disableer2.Parent = Frame
-disableer2.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
-disableer2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-disableer2.BorderSizePixel = 0
-disableer2.Position = UDim2.new(0.0400285162, 0, 0.139030069, 0)
-disableer2.Size = UDim2.new(0, 256, 0, 37)
-disableer2.Font = Enum.Font.SourceSans
-disableer2.Text = "Disabler [ADVANCED]"
-disableer2.TextColor3 = Color3.fromRGB(0, 0, 0)
-disableer2.TextSize = 33.000
-disableer2.TextWrapped = true
 
-UICorner_7.Parent = disableer2
 
-Config_5.Name = "Config"
-Config_5.Parent = disableer2
+-- StarterGui.GUI.Frame.Disabler.LocalScript
+G2L["a"] = Instance.new("LocalScript", G2L["8"]);
 
-Notifies.Name = "Notifies"
-Notifies.Parent = GUI
-Notifies.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Notifies.BackgroundTransparency = 1.000
-Notifies.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Notifies.BorderSizePixel = 0
-Notifies.Position = UDim2.new(0.788068235, 0, 0.0412133522, 0)
-Notifies.Size = UDim2.new(0, 270, 0, 629)
 
-UIListLayout_2.Parent = Notifies
-UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Right
-UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Bottom
-UIListLayout_2.Padding = UDim.new(0, 5)
 
-NotificationTemplate.Name = "NotificationTemplate"
-NotificationTemplate.Parent = game.StarterGui.GUI.Notifies.Notification
-NotificationTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-NotificationTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NotificationTemplate.BorderSizePixel = 0
-NotificationTemplate.Position = UDim2.new(0.0441767052, 0, 0.0967741907, 0)
-NotificationTemplate.Size = UDim2.new(0, 227, 0, 99)
+-- StarterGui.GUI.Frame.Disabler.Config
+G2L["b"] = Instance.new("Folder", G2L["8"]);
+G2L["b"]["Name"] = [[Config]];
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(124, 173, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(63, 255, 136))}
-UIGradient.Parent = NotificationTemplate
 
-TextLabel_2.Parent = NotificationTemplate
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Size = UDim2.new(0, 227, 0, 99)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "Test Notification"
-TextLabel_2.TextColor3 = Color3.fromRGB(35, 35, 35)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
+-- StarterGui.GUI.Frame.Disabler.Config.Active
+G2L["c"] = Instance.new("BoolValue", G2L["b"]);
+G2L["c"]["Name"] = [[Active]];
 
-UICorner_8.CornerRadius = UDim.new(0, 25)
-UICorner_8.Parent = NotificationTemplate
 
-AdvanceFly.Name = "AdvanceFly"
-AdvanceFly.Parent = GUI
-AdvanceFly.Active = true
-AdvanceFly.BackgroundColor3 = Color3.fromRGB(41, 41, 42)
-AdvanceFly.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AdvanceFly.BorderSizePixel = 0
-AdvanceFly.Position = UDim2.new(0.710543633, 0, 0.135499999, 0)
-AdvanceFly.Size = UDim2.new(0, 274, 0, 295)
-AdvanceFly.Visible = false
+-- StarterGui.GUI.Frame.Disabler.Config.Mode
+G2L["d"] = Instance.new("StringValue", G2L["b"]);
+G2L["d"]["Name"] = [[Mode]];
+G2L["d"]["Value"] = [[Local]];
 
-Flight.Name = "Flight"
-Flight.Parent = AdvanceFly
-Flight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Flight.BackgroundTransparency = 1.000
-Flight.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Flight.BorderSizePixel = 0
-Flight.Position = UDim2.new(0.182481751, 0, 0, 0)
-Flight.Size = UDim2.new(0, 159, 0, 50)
-Flight.Font = Enum.Font.SourceSansBold
-Flight.Text = "Flight"
-Flight.TextColor3 = Color3.fromRGB(0, 255, 28)
-Flight.TextScaled = true
-Flight.TextSize = 14.000
-Flight.TextWrapped = true
 
-UICorner_9.Parent = AdvanceFly
+-- StarterGui.GUI.Frame.Config
+G2L["e"] = Instance.new("Frame", G2L["5"]);
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(152, 152, 155);
+G2L["e"]["Size"] = UDim2.new(0, 206, 0, 324);
+G2L["e"]["Position"] = UDim2.new(0.41458, 0, 0.24942, 0);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Name"] = [[Config]];
+G2L["e"]["BackgroundTransparency"] = 0.3;
 
-UP.Name = "UP"
-UP.Parent = AdvanceFly
-UP.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
-UP.BorderColor3 = Color3.fromRGB(0, 0, 0)
-UP.BorderSizePixel = 0
-UP.Position = UDim2.new(0.0241200253, 0, 0.167145193, 0)
-UP.Size = UDim2.new(0, 116, 0, 45)
-UP.Font = Enum.Font.SourceSans
-UP.Text = "UP"
-UP.TextColor3 = Color3.fromRGB(0, 0, 0)
-UP.TextSize = 33.000
-UP.TextWrapped = true
 
-UICorner_10.Parent = UP
+-- StarterGui.GUI.Frame.Config.UICorner
+G2L["f"] = Instance.new("UICorner", G2L["e"]);
 
-DOWN.Name = "DOWN"
-DOWN.Parent = AdvanceFly
-DOWN.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
-DOWN.BorderColor3 = Color3.fromRGB(0, 0, 0)
-DOWN.BorderSizePixel = 0
-DOWN.Position = UDim2.new(0.494922936, 0, 0.169357657, 0)
-DOWN.Size = UDim2.new(0, 116, 0, 45)
-DOWN.Font = Enum.Font.SourceSans
-DOWN.Text = "DOWN"
-DOWN.TextColor3 = Color3.fromRGB(0, 0, 0)
-DOWN.TextSize = 33.000
-DOWN.TextWrapped = true
 
-UICorner_11.Parent = DOWN
 
-speedText.Name = "speedText"
-speedText.Parent = AdvanceFly
-speedText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-speedText.BackgroundTransparency = 1.000
-speedText.BorderColor3 = Color3.fromRGB(0, 0, 0)
-speedText.BorderSizePixel = 0
-speedText.Position = UDim2.new(0.0255474448, 0, 0.348791927, 0)
-speedText.Size = UDim2.new(0, 245, 0, 50)
-speedText.Font = Enum.Font.SourceSansBold
-speedText.Text = "Tower Speed:"
-speedText.TextColor3 = Color3.fromRGB(0, 255, 28)
-speedText.TextScaled = true
-speedText.TextSize = 14.000
-speedText.TextWrapped = true
+-- StarterGui.GUI.Frame.Config.UIListLayout
+G2L["10"] = Instance.new("UIListLayout", G2L["e"]);
+G2L["10"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 
-speed.Name = "speed"
-speed.Parent = AdvanceFly
-speed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-speed.BackgroundTransparency = 1.000
-speed.BorderColor3 = Color3.fromRGB(0, 0, 0)
-speed.BorderSizePixel = 0
-speed.Position = UDim2.new(0.060685873, 0, 0.544608712, 0)
-speed.Size = UDim2.new(0, 240, 0, 55)
-speed.Font = Enum.Font.SourceSans
-speed.PlaceholderText = "Speed"
-speed.Text = "0.4"
-speed.TextColor3 = Color3.fromRGB(255, 255, 255)
-speed.TextScaled = true
-speed.TextSize = 14.000
-speed.TextWrapped = true
 
-disable.Name = "disable"
-disable.Parent = AdvanceFly
-disable.BackgroundColor3 = Color3.fromRGB(170, 105, 101)
-disable.BorderColor3 = Color3.fromRGB(0, 0, 0)
-disable.BorderSizePixel = 0
-disable.Position = UDim2.new(0.0715652779, 0, 0.768312097, 0)
-disable.Size = UDim2.new(0, 232, 0, 49)
-disable.Font = Enum.Font.SourceSans
-disable.Text = "DISABLE"
-disable.TextColor3 = Color3.fromRGB(255, 255, 255)
-disable.TextScaled = true
-disable.TextSize = 33.000
-disable.TextWrapped = true
+-- StarterGui.GUI.Frame.Speed
+G2L["11"] = Instance.new("TextButton", G2L["5"]);
+G2L["11"]["TextWrapped"] = true;
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextSize"] = 33;
+G2L["11"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(152, 152, 155);
+G2L["11"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["11"]["Size"] = UDim2.new(0, 110, 0, 41);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Text"] = [[Speed]];
+G2L["11"]["Name"] = [[Speed]];
+G2L["11"]["Position"] = UDim2.new(0.04236, 0, 0.75759, 0);
 
-UICorner_12.Parent = disable
 
-Disabling.Name = "Disabling"
-Disabling.Parent = GUI
-Disabling.Active = true
-Disabling.BackgroundColor3 = Color3.fromRGB(41, 41, 42)
-Disabling.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Disabling.BorderSizePixel = 0
-Disabling.Position = UDim2.new(0.71860224, 0, 0.135499999, 0)
-Disabling.Size = UDim2.new(0, 274, 0, 295)
-Disabling.Visible = false
+-- StarterGui.GUI.Frame.Speed.UICorner
+G2L["12"] = Instance.new("UICorner", G2L["11"]);
 
-ScrollingFrame.Parent = Disabling
-ScrollingFrame.Active = true
-ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ScrollingFrame.BorderSizePixel = 0
-ScrollingFrame.Position = UDim2.new(0.0474450327, 0, 0.0406779647, 0)
-ScrollingFrame.Size = UDim2.new(0, 250, 0, 201)
 
-UIListLayout_3.Parent = ScrollingFrame
-UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 
-TextButton.Parent = Disabling
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.0474452563, 0, 0.776271164, 0)
-TextButton.Size = UDim2.new(0, 249, 0, 50)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.Text = "X"
-TextButton.TextColor3 = Color3.fromRGB(255, 0, 17)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
+-- StarterGui.GUI.Frame.Speed.LocalScript
+G2L["13"] = Instance.new("LocalScript", G2L["11"]);
 
--- Module Scripts:
 
-local fake_module_scripts = {}
 
-do -- Notifies.Notification
-	local script = Instance.new('ModuleScript', Notifies)
-	script.Name = "Notification"
-	local function module_script()
-		local TweenService = game:GetService("TweenService")
-		local players = game:GetService("Players")
-		
-		local plr = game.Players.LocalPlayer
-		
-		local notificationTemplate = script:WaitForChild("NotificationTemplate")
-		local orgSize = notificationTemplate.Size
-		
-		local module = {}
-		
-		function module.Notify(text,duration)
-			local newNotif = notificationTemplate:Clone()
-			newNotif.Size = UDim2.fromScale(0,0)
-			
-			newNotif.BackgroundTransparency = 1
-			newNotif.TextLabel.Transparency = 1
-			newNotif.TextLabel.Text = text
-			
-			newNotif.Parent = script.Parent
-			
-			TweenService:Create(newNotif,TweenInfo.new(0.6),{BackgroundTransparency = 0}):Play()
-			TweenService:Create(newNotif.TextLabel,TweenInfo.new(1), {TextTransparency = 0}):Play()
-			
-			TweenService:Create(newNotif,TweenInfo.new(0.4,Enum.EasingStyle.Sine,Enum.EasingDirection.Out), {Size = orgSize}):Play()
-			
-			task.wait(duration)
-			
-			TweenService:Create(newNotif,TweenInfo.new(0.6),{BackgroundTransparency = 1}):Play()
-			TweenService:Create(newNotif.TextLabel,TweenInfo.new(1), {TextTransparency = 1}):Play()
-		
-			TweenService:Create(newNotif,TweenInfo.new(0.7,Enum.EasingStyle.Sine,Enum.EasingDirection.Out), {Size = UDim2.fromScale(0,0)}):Play()
-			
-			task.wait(1)
-			
-			newNotif:Destroy() 
-		end
-		
-		return module
-		
-	end
-	fake_module_scripts[script] = module_script
+-- StarterGui.GUI.Frame.Speed.Config
+G2L["14"] = Instance.new("Folder", G2L["11"]);
+G2L["14"]["Name"] = [[Config]];
+
+
+-- StarterGui.GUI.Frame.Speed.Config.Active
+G2L["15"] = Instance.new("BoolValue", G2L["14"]);
+G2L["15"]["Name"] = [[Active]];
+
+
+-- StarterGui.GUI.Frame.Speed.Config.Mode
+G2L["16"] = Instance.new("StringValue", G2L["14"]);
+G2L["16"]["Name"] = [[Mode]];
+G2L["16"]["Value"] = [[Local]];
+
+
+-- StarterGui.GUI.Frame.Fly
+G2L["17"] = Instance.new("TextButton", G2L["5"]);
+G2L["17"]["TextWrapped"] = true;
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["TextSize"] = 33;
+G2L["17"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(152, 152, 155);
+G2L["17"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["17"]["Size"] = UDim2.new(0, 110, 0, 41);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["Text"] = [[Flight]];
+G2L["17"]["Name"] = [[Fly]];
+G2L["17"]["Position"] = UDim2.new(0.04236, 0, 0.86537, 0);
+
+
+-- StarterGui.GUI.Frame.Fly.UICorner
+G2L["18"] = Instance.new("UICorner", G2L["17"]);
+
+
+
+-- StarterGui.GUI.Frame.Fly.LocalScript
+G2L["19"] = Instance.new("LocalScript", G2L["17"]);
+
+
+
+-- StarterGui.GUI.Frame.Fly.Config
+G2L["1a"] = Instance.new("Folder", G2L["17"]);
+G2L["1a"]["Name"] = [[Config]];
+
+
+-- StarterGui.GUI.Frame.Fly.Config.Active
+G2L["1b"] = Instance.new("BoolValue", G2L["1a"]);
+G2L["1b"]["Name"] = [[Active]];
+
+
+-- StarterGui.GUI.Frame.Fly.Config.Mode
+G2L["1c"] = Instance.new("StringValue", G2L["1a"]);
+G2L["1c"]["Name"] = [[Mode]];
+G2L["1c"]["Value"] = [[Local]];
+
+
+-- StarterGui.GUI.Frame.disableer2
+G2L["1d"] = Instance.new("TextButton", G2L["5"]);
+G2L["1d"]["TextWrapped"] = true;
+G2L["1d"]["BorderSizePixel"] = 0;
+G2L["1d"]["TextSize"] = 33;
+G2L["1d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["BackgroundColor3"] = Color3.fromRGB(152, 152, 155);
+G2L["1d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1d"]["Size"] = UDim2.new(0, 256, 0, 37);
+G2L["1d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1d"]["Text"] = [[Disabler (ADVANCED)]];
+G2L["1d"]["Name"] = [[disableer2]];
+G2L["1d"]["Position"] = UDim2.new(0.04003, 0, 0.13903, 0);
+
+
+-- StarterGui.GUI.Frame.disableer2.UICorner
+G2L["1e"] = Instance.new("UICorner", G2L["1d"]);
+
+
+
+-- StarterGui.GUI.Frame.disableer2.LocalScript
+G2L["1f"] = Instance.new("LocalScript", G2L["1d"]);
+
+
+
+-- StarterGui.GUI.Frame.disableer2.LocalScript.DelScript
+G2L["20"] = Instance.new("LocalScript", G2L["1f"]);
+G2L["20"]["Enabled"] = false;
+G2L["20"]["Name"] = [[DelScript]];
+G2L["20"]["Disabled"] = true;
+
+
+-- StarterGui.GUI.Frame.disableer2.Config
+G2L["21"] = Instance.new("Folder", G2L["1d"]);
+G2L["21"]["Name"] = [[Config]];
+
+
+-- StarterGui.GUI.Frame.disableer2.Config.Active
+G2L["22"] = Instance.new("BoolValue", G2L["21"]);
+G2L["22"]["Name"] = [[Active]];
+
+
+-- StarterGui.GUI.Frame.disableer2.Config.Mode
+G2L["23"] = Instance.new("StringValue", G2L["21"]);
+G2L["23"]["Name"] = [[Mode]];
+G2L["23"]["Value"] = [[Local]];
+
+
+-- StarterGui.GUI.Notifies
+G2L["24"] = Instance.new("Frame", G2L["1"]);
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["Size"] = UDim2.new(0, 270, 0, 629);
+G2L["24"]["Position"] = UDim2.new(0.78807, 0, 0.04121, 0);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["Name"] = [[Notifies]];
+G2L["24"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.GUI.Notifies.UIListLayout
+G2L["25"] = Instance.new("UIListLayout", G2L["24"]);
+G2L["25"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Right;
+G2L["25"]["Padding"] = UDim.new(0, 5);
+G2L["25"]["VerticalAlignment"] = Enum.VerticalAlignment.Bottom;
+G2L["25"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.GUI.Notifies.Notification
+G2L["26"] = Instance.new("ModuleScript", G2L["24"]);
+G2L["26"]["Name"] = [[Notification]];
+
+
+-- StarterGui.GUI.Notifies.Notification.NotificationTemplate
+G2L["27"] = Instance.new("Frame", G2L["26"]);
+G2L["27"]["BorderSizePixel"] = 0;
+G2L["27"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["27"]["Size"] = UDim2.new(0, 227, 0, 99);
+G2L["27"]["Position"] = UDim2.new(0.04418, 0, 0.09677, 0);
+G2L["27"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["27"]["Name"] = [[NotificationTemplate]];
+
+
+-- StarterGui.GUI.Notifies.Notification.NotificationTemplate.UIGradient
+G2L["28"] = Instance.new("UIGradient", G2L["27"]);
+G2L["28"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(125, 174, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(64, 255, 137))};
+
+
+-- StarterGui.GUI.Notifies.Notification.NotificationTemplate.TextLabel
+G2L["29"] = Instance.new("TextLabel", G2L["27"]);
+G2L["29"]["TextWrapped"] = true;
+G2L["29"]["BorderSizePixel"] = 0;
+G2L["29"]["TextSize"] = 14;
+G2L["29"]["TextScaled"] = true;
+G2L["29"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["29"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["29"]["TextColor3"] = Color3.fromRGB(36, 36, 36);
+G2L["29"]["BackgroundTransparency"] = 1;
+G2L["29"]["Size"] = UDim2.new(0, 227, 0, 99);
+G2L["29"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["29"]["Text"] = [[Test Notification]];
+
+
+-- StarterGui.GUI.Notifies.Notification.NotificationTemplate.UICorner
+G2L["2a"] = Instance.new("UICorner", G2L["27"]);
+G2L["2a"]["CornerRadius"] = UDim.new(0, 25);
+
+
+-- StarterGui.GUI.AdvanceFly
+G2L["2b"] = Instance.new("Frame", G2L["1"]);
+G2L["2b"]["Visible"] = false;
+G2L["2b"]["Active"] = true;
+G2L["2b"]["BorderSizePixel"] = 0;
+G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(42, 42, 43);
+G2L["2b"]["Size"] = UDim2.new(0, 274, 0, 295);
+G2L["2b"]["Position"] = UDim2.new(0.71054, 0, 0.1355, 0);
+G2L["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2b"]["Name"] = [[AdvanceFly]];
+
+
+-- StarterGui.GUI.AdvanceFly.Flight
+G2L["2c"] = Instance.new("TextLabel", G2L["2b"]);
+G2L["2c"]["TextWrapped"] = true;
+G2L["2c"]["BorderSizePixel"] = 0;
+G2L["2c"]["TextSize"] = 14;
+G2L["2c"]["TextScaled"] = true;
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["2c"]["TextColor3"] = Color3.fromRGB(0, 255, 29);
+G2L["2c"]["BackgroundTransparency"] = 1;
+G2L["2c"]["RichText"] = true;
+G2L["2c"]["Size"] = UDim2.new(0, 159, 0, 50);
+G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["Text"] = [[Flight]];
+G2L["2c"]["Name"] = [[Flight]];
+G2L["2c"]["Position"] = UDim2.new(0.18248, 0, 0, 0);
+
+
+-- StarterGui.GUI.AdvanceFly.UICorner
+G2L["2d"] = Instance.new("UICorner", G2L["2b"]);
+
+
+
+-- StarterGui.GUI.AdvanceFly.UP
+G2L["2e"] = Instance.new("TextButton", G2L["2b"]);
+G2L["2e"]["TextWrapped"] = true;
+G2L["2e"]["BorderSizePixel"] = 0;
+G2L["2e"]["TextSize"] = 33;
+G2L["2e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["BackgroundColor3"] = Color3.fromRGB(152, 152, 155);
+G2L["2e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2e"]["Size"] = UDim2.new(0, 116, 0, 45);
+G2L["2e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2e"]["Text"] = [[UP]];
+G2L["2e"]["Name"] = [[UP]];
+G2L["2e"]["Position"] = UDim2.new(0.02412, 0, 0.16715, 0);
+
+
+-- StarterGui.GUI.AdvanceFly.UP.UICorner
+G2L["2f"] = Instance.new("UICorner", G2L["2e"]);
+
+
+
+-- StarterGui.GUI.AdvanceFly.UP.LocalScript
+G2L["30"] = Instance.new("LocalScript", G2L["2e"]);
+
+
+
+-- StarterGui.GUI.AdvanceFly.DOWN
+G2L["31"] = Instance.new("TextButton", G2L["2b"]);
+G2L["31"]["TextWrapped"] = true;
+G2L["31"]["BorderSizePixel"] = 0;
+G2L["31"]["TextSize"] = 33;
+G2L["31"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["BackgroundColor3"] = Color3.fromRGB(152, 152, 155);
+G2L["31"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["31"]["Size"] = UDim2.new(0, 116, 0, 45);
+G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["Text"] = [[DOWN]];
+G2L["31"]["Name"] = [[DOWN]];
+G2L["31"]["Position"] = UDim2.new(0.49492, 0, 0.16936, 0);
+
+
+-- StarterGui.GUI.AdvanceFly.DOWN.UICorner
+G2L["32"] = Instance.new("UICorner", G2L["31"]);
+
+
+
+-- StarterGui.GUI.AdvanceFly.DOWN.LocalScript
+G2L["33"] = Instance.new("LocalScript", G2L["31"]);
+
+
+
+-- StarterGui.GUI.AdvanceFly.speedText
+G2L["34"] = Instance.new("TextLabel", G2L["2b"]);
+G2L["34"]["TextWrapped"] = true;
+G2L["34"]["BorderSizePixel"] = 0;
+G2L["34"]["TextSize"] = 14;
+G2L["34"]["TextScaled"] = true;
+G2L["34"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["34"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["34"]["TextColor3"] = Color3.fromRGB(0, 255, 29);
+G2L["34"]["BackgroundTransparency"] = 1;
+G2L["34"]["RichText"] = true;
+G2L["34"]["Size"] = UDim2.new(0, 245, 0, 50);
+G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["Text"] = [[Tower Speed:]];
+G2L["34"]["Name"] = [[speedText]];
+G2L["34"]["Position"] = UDim2.new(0.02555, 0, 0.34879, 0);
+
+
+-- StarterGui.GUI.AdvanceFly.speed
+G2L["35"] = Instance.new("TextBox", G2L["2b"]);
+G2L["35"]["Name"] = [[speed]];
+G2L["35"]["BorderSizePixel"] = 0;
+G2L["35"]["TextWrapped"] = true;
+G2L["35"]["TextSize"] = 14;
+G2L["35"]["TextDirection"] = Enum.TextDirection.RightToLeft;
+G2L["35"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["35"]["TextScaled"] = true;
+G2L["35"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["35"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["35"]["PlaceholderText"] = [[Speed]];
+G2L["35"]["Size"] = UDim2.new(0, 240, 0, 55);
+G2L["35"]["Position"] = UDim2.new(0.06069, 0, 0.54461, 0);
+G2L["35"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["35"]["Text"] = [[0.4]];
+G2L["35"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.GUI.AdvanceFly.disable
+G2L["36"] = Instance.new("TextButton", G2L["2b"]);
+G2L["36"]["TextWrapped"] = true;
+G2L["36"]["BorderSizePixel"] = 0;
+G2L["36"]["TextSize"] = 33;
+G2L["36"]["TextScaled"] = true;
+G2L["36"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["36"]["BackgroundColor3"] = Color3.fromRGB(171, 106, 102);
+G2L["36"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["36"]["Size"] = UDim2.new(0, 232, 0, 49);
+G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["Text"] = [[DISABLE]];
+G2L["36"]["Name"] = [[disable]];
+G2L["36"]["Position"] = UDim2.new(0.07157, 0, 0.76831, 0);
+
+
+-- StarterGui.GUI.AdvanceFly.disable.UICorner
+G2L["37"] = Instance.new("UICorner", G2L["36"]);
+
+
+
+-- StarterGui.GUI.AdvanceFly.disable.LocalScript
+G2L["38"] = Instance.new("LocalScript", G2L["36"]);
+
+
+
+-- StarterGui.GUI.Disabling
+G2L["39"] = Instance.new("Frame", G2L["1"]);
+G2L["39"]["Visible"] = false;
+G2L["39"]["Active"] = true;
+G2L["39"]["BorderSizePixel"] = 0;
+G2L["39"]["BackgroundColor3"] = Color3.fromRGB(42, 42, 43);
+G2L["39"]["Size"] = UDim2.new(0, 274, 0, 295);
+G2L["39"]["Position"] = UDim2.new(0.7186, 0, 0.1355, 0);
+G2L["39"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["39"]["Name"] = [[Disabling]];
+
+
+-- StarterGui.GUI.Disabling.ScrollingFrame
+G2L["3a"] = Instance.new("ScrollingFrame", G2L["39"]);
+G2L["3a"]["Active"] = true;
+G2L["3a"]["BorderSizePixel"] = 0;
+G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3a"]["Size"] = UDim2.new(0, 250, 0, 201);
+G2L["3a"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3a"]["Position"] = UDim2.new(0.04745, 0, 0.04068, 0);
+G2L["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.GUI.Disabling.ScrollingFrame.UIListLayout
+G2L["3b"] = Instance.new("UIListLayout", G2L["3a"]);
+G2L["3b"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.GUI.Disabling.TextButton
+G2L["3c"] = Instance.new("TextButton", G2L["39"]);
+G2L["3c"]["TextWrapped"] = true;
+G2L["3c"]["BorderSizePixel"] = 0;
+G2L["3c"]["TextSize"] = 14;
+G2L["3c"]["TextScaled"] = true;
+G2L["3c"]["TextColor3"] = Color3.fromRGB(255, 0, 18);
+G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3c"]["Size"] = UDim2.new(0, 249, 0, 50);
+G2L["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3c"]["Text"] = [[X]];
+G2L["3c"]["Position"] = UDim2.new(0.04745, 0, 0.77627, 0);
+
+
+-- StarterGui.GUI.Disabling.TextButton.LocalScript
+G2L["3d"] = Instance.new("LocalScript", G2L["3c"]);
+
+
+
+-- Require G2L wrapper
+local G2L_REQUIRE = require;
+local G2L_MODULES = {};
+local function require(Module:ModuleScript)
+    local ModuleState = G2L_MODULES[Module];
+    if ModuleState then
+        if not ModuleState.Required then
+            ModuleState.Required = true;
+            ModuleState.Value = ModuleState.Closure();
+        end
+        return ModuleState.Value;
+    end;
+    return G2L_REQUIRE(Module);
 end
 
+G2L_MODULES[G2L["26"]] = {
+Closure = function()
+    local script = G2L["26"];local TweenService = game:GetService("TweenService")
+local players = game:GetService("Players")
 
--- Scripts:
+local plr = game.Players.LocalPlayer
 
-local function GHEW_fake_script() -- OpenClose.LocalScript 
-	local script = Instance.new('LocalScript', OpenClose)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
+local notificationTemplate = script:WaitForChild("NotificationTemplate")
+local orgSize = notificationTemplate.Size
 
+local module = {}
+
+function module.Notify(text,duration)
+	local newNotif = notificationTemplate:Clone()
+	newNotif.Size = UDim2.fromScale(0,0)
+	
+	newNotif.BackgroundTransparency = 1
+	newNotif.TextLabel.Transparency = 1
+	newNotif.TextLabel.Text = text
+	
+	newNotif.Parent = script.Parent
+	
+	TweenService:Create(newNotif,TweenInfo.new(0.6),{BackgroundTransparency = 0}):Play()
+	TweenService:Create(newNotif.TextLabel,TweenInfo.new(1), {TextTransparency = 0}):Play()
+	
+	TweenService:Create(newNotif,TweenInfo.new(0.4,Enum.EasingStyle.Sine,Enum.EasingDirection.Out), {Size = orgSize}):Play()
+	
+	task.wait(duration)
+	
+	TweenService:Create(newNotif,TweenInfo.new(0.6),{BackgroundTransparency = 1}):Play()
+	TweenService:Create(newNotif.TextLabel,TweenInfo.new(1), {TextTransparency = 1}):Play()
+
+	TweenService:Create(newNotif,TweenInfo.new(0.7,Enum.EasingStyle.Sine,Enum.EasingDirection.Out), {Size = UDim2.fromScale(0,0)}):Play()
+	
+	task.wait(1)
+	
+	newNotif:Destroy() 
+end
+
+return module
+
+end;
+};
+-- StarterGui.GUI.OpenClose.LocalScript
+local function C_4()
+local script = G2L["4"];
 	script.Parent.Parent:WaitForChild("Frame").Draggable = true
 	script.Parent.Parent.Frame.Config.Visible = false
 	script.Parent.MouseButton1Click:Connect(function()
@@ -431,19 +590,11 @@ local function GHEW_fake_script() -- OpenClose.LocalScript
 			script.Parent.Parent.Frame.Visible = false
 		end
 	end)
-end
-coroutine.wrap(GHEW_fake_script)()
-local function QIWNY_fake_script() -- Disabler.LocalScript 
-	local script = Instance.new('LocalScript', Disabler)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
+end;
+task.spawn(C_4);
+-- StarterGui.GUI.Frame.Disabler.LocalScript
+local function C_a()
+local script = G2L["a"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Config.Visible = false
 		if script.Parent.Config.Mode.Value == "Local" then
@@ -459,19 +610,11 @@ local function QIWNY_fake_script() -- Disabler.LocalScript
 		end
 	end)
 	
-end
-coroutine.wrap(QIWNY_fake_script)()
-local function GNWHFC_fake_script() -- Speed.LocalScript 
-	local script = Instance.new('LocalScript', Speed)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
+end;
+task.spawn(C_a);
+-- StarterGui.GUI.Frame.Speed.LocalScript
+local function C_13()
+local script = G2L["13"];
 	script.Parent.MouseButton1Click:Connect(function()
 		local notif = require(script.Parent.Parent.Parent.Notifies.Notification)
 	
@@ -576,19 +719,11 @@ local function GNWHFC_fake_script() -- Speed.LocalScript
 		end)
 	end)
 	
-end
-coroutine.wrap(GNWHFC_fake_script)()
-local function TWNZ_fake_script() -- Fly.LocalScript 
-	local script = Instance.new('LocalScript', Fly)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
+end;
+task.spawn(C_13);
+-- StarterGui.GUI.Frame.Fly.LocalScript
+local function C_19()
+local script = G2L["19"];
 	local UIS = game:GetService("UserInputService")
 	local Humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
 	local hpr = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
@@ -836,19 +971,11 @@ local function TWNZ_fake_script() -- Fly.LocalScript
 		
 	end)
 	
-end
-coroutine.wrap(TWNZ_fake_script)()
-local function WGHC_fake_script() -- disableer2.LocalScript 
-	local script = Instance.new('LocalScript', disableer2)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
+end;
+task.spawn(C_19);
+-- StarterGui.GUI.Frame.disableer2.LocalScript
+local function C_1f()
+local script = G2L["1f"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.Disabling.Visible = true
 		for i,x in game:GetService("ReplicatedStorage"):GetDescendants() do
@@ -873,138 +1000,41 @@ local function WGHC_fake_script() -- disableer2.LocalScript
 		end
 	end)
 	
-end
-coroutine.wrap(WGHC_fake_script)()
--- nil.DelScript is disabled.
-local function HHFNCI_fake_script() -- Frame.Smooth GUI Dragging 
-	local script = Instance.new('LocalScript', Frame)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
-	local UserInputService = game:GetService("UserInputService")
-	local runService = (game:GetService("RunService"));
-	
-	local gui = script.Parent
-	
-	local dragging
-	local dragInput
-	local dragStart
-	local startPos
-	
-	function Lerp(a, b, m)
-		return a + (b - a) * m
-	end;
-	
-	local lastMousePos
-	local lastGoalPos
-	local DRAG_SPEED = (8); -- // The speed of the UI darg.
-	function Update(dt)
-		if not (startPos) then return end;
-		if not (dragging) and (lastGoalPos) then
-			gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
-			return 
-		end;
-	
-		local delta = (lastMousePos - UserInputService:GetMouseLocation())
-		local xGoal = (startPos.X.Offset - delta.X);
-		local yGoal = (startPos.Y.Offset - delta.Y);
-		lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
-		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
-	end;
-	
-	gui.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-			dragging = true
-			dragStart = input.Position
-			startPos = gui.Position
-			lastMousePos = UserInputService:GetMouseLocation()
-	
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
-				end
-			end)
-		end
-	end)
-	
-	gui.InputChanged:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-			dragInput = input
-		end
-	end)
-	
-	runService.Heartbeat:Connect(Update)
-end
-coroutine.wrap(HHFNCI_fake_script)()
-local function TBDRGAA_fake_script() -- UP.LocalScript 
-	local script = Instance.new('LocalScript', UP)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
+end;
+task.spawn(C_1f);
+-- StarterGui.GUI.AdvanceFly.UP.LocalScript
+local function C_30()
+local script = G2L["30"];
 	script.Parent.MouseButton1Click:Connect(function()
 		local speed = script.Parent.Parent.speed.Text
 		_G.posY = _G.posY + speed
 	end)
-end
-coroutine.wrap(TBDRGAA_fake_script)()
-local function ZZBY_fake_script() -- DOWN.LocalScript 
-	local script = Instance.new('LocalScript', DOWN)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
+end;
+task.spawn(C_30);
+-- StarterGui.GUI.AdvanceFly.DOWN.LocalScript
+local function C_33()
+local script = G2L["33"];
 	script.Parent.MouseButton1Click:Connect(function()
 		local speed = script.Parent.Parent.speed.Text
 		_G.posY = _G.posY - speed
 	end)
-end
-coroutine.wrap(ZZBY_fake_script)()
-local function CTPV_fake_script() -- disable.LocalScript 
-	local script = Instance.new('LocalScript', disable)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
+end;
+task.spawn(C_33);
+-- StarterGui.GUI.AdvanceFly.disable.LocalScript
+local function C_38()
+local script = G2L["38"];
 	script.Parent.MouseButton1Click:Connect(function()
 		_G.realFly = false
 	end)
-end
-coroutine.wrap(CTPV_fake_script)()
-local function JYIQWZ_fake_script() -- TextButton.LocalScript 
-	local script = Instance.new('LocalScript', TextButton)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
+end;
+task.spawn(C_38);
+-- StarterGui.GUI.Disabling.TextButton.LocalScript
+local function C_3d()
+local script = G2L["3d"];
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 	end)
-end
-coroutine.wrap(JYIQWZ_fake_script)()
+end;
+task.spawn(C_3d);
+
+return G2L["1"], require;
