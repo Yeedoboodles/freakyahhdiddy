@@ -1,36 +1,46 @@
--- GUI to Lua
------
--- Version: 2.0.
--- Made by chrisopdemobiel.
+-- Gui to Lua
+-- Version: 3.2
 
 -- Instances:
 
 local GUI = Instance.new("ScreenGui")
 local OpenClose = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
+local UICorner_2 = Instance.new("UICorner")
 local Disabler = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
 local Config = Instance.new("Folder")
 local Config_2 = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
 local UIListLayout = Instance.new("UIListLayout")
 local Speed = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
 local Config_3 = Instance.new("Folder")
 local Fly = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
 local Config_4 = Instance.new("Folder")
 local disableer2 = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
 local Config_5 = Instance.new("Folder")
 local Notifies = Instance.new("Frame")
 local UIListLayout_2 = Instance.new("UIListLayout")
 local NotificationTemplate = Instance.new("Frame")
 local UIGradient = Instance.new("UIGradient")
 local TextLabel_2 = Instance.new("TextLabel")
+local UICorner_8 = Instance.new("UICorner")
 local AdvanceFly = Instance.new("Frame")
 local Flight = Instance.new("TextLabel")
+local UICorner_9 = Instance.new("UICorner")
 local UP = Instance.new("TextButton")
+local UICorner_10 = Instance.new("UICorner")
 local DOWN = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
 local speedText = Instance.new("TextLabel")
 local speed = Instance.new("TextBox")
 local disable = Instance.new("TextButton")
+local UICorner_12 = Instance.new("UICorner")
 local Disabling = Instance.new("Frame")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout_3 = Instance.new("UIListLayout")
@@ -56,6 +66,8 @@ OpenClose.TextScaled = true
 OpenClose.TextSize = 14.000
 OpenClose.TextWrapped = true
 
+UICorner.Parent = OpenClose
+
 Frame.Parent = GUI
 Frame.Active = true
 Frame.BackgroundColor3 = Color3.fromRGB(31, 41, 52)
@@ -77,6 +89,8 @@ TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 
+UICorner_2.Parent = Frame
+
 Disabler.Name = "Disabler"
 Disabler.Parent = Frame
 Disabler.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
@@ -90,6 +104,8 @@ Disabler.TextColor3 = Color3.fromRGB(0, 0, 0)
 Disabler.TextSize = 33.000
 Disabler.TextWrapped = true
 
+UICorner_3.Parent = Disabler
+
 Config.Name = "Config"
 Config.Parent = Disabler
 
@@ -101,6 +117,8 @@ Config_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Config_2.BorderSizePixel = 0
 Config_2.Position = UDim2.new(0.414584965, 0, 0.249424547, 0)
 Config_2.Size = UDim2.new(0, 206, 0, 324)
+
+UICorner_4.Parent = Config_2
 
 UIListLayout.Parent = Config_2
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -118,6 +136,8 @@ Speed.TextColor3 = Color3.fromRGB(0, 0, 0)
 Speed.TextSize = 33.000
 Speed.TextWrapped = true
 
+UICorner_5.Parent = Speed
+
 Config_3.Name = "Config"
 Config_3.Parent = Speed
 
@@ -134,6 +154,8 @@ Fly.TextColor3 = Color3.fromRGB(0, 0, 0)
 Fly.TextSize = 33.000
 Fly.TextWrapped = true
 
+UICorner_6.Parent = Fly
+
 Config_4.Name = "Config"
 Config_4.Parent = Fly
 
@@ -149,6 +171,8 @@ disableer2.Text = "Disabler [ADVANCED]"
 disableer2.TextColor3 = Color3.fromRGB(0, 0, 0)
 disableer2.TextSize = 33.000
 disableer2.TextWrapped = true
+
+UICorner_7.Parent = disableer2
 
 Config_5.Name = "Config"
 Config_5.Parent = disableer2
@@ -176,7 +200,7 @@ NotificationTemplate.BorderSizePixel = 0
 NotificationTemplate.Position = UDim2.new(0.0441767052, 0, 0.0967741907, 0)
 NotificationTemplate.Size = UDim2.new(0, 227, 0, 99)
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, Color3.fromRGB(124, 173, 255)), ColorSequenceKeypoint.new(1, Color3.fromRGB(63, 255, 136))}
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(124, 173, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(63, 255, 136))}
 UIGradient.Parent = NotificationTemplate
 
 TextLabel_2.Parent = NotificationTemplate
@@ -191,6 +215,9 @@ TextLabel_2.TextColor3 = Color3.fromRGB(35, 35, 35)
 TextLabel_2.TextScaled = true
 TextLabel_2.TextSize = 14.000
 TextLabel_2.TextWrapped = true
+
+UICorner_8.CornerRadius = UDim.new(0, 25)
+UICorner_8.Parent = NotificationTemplate
 
 AdvanceFly.Name = "AdvanceFly"
 AdvanceFly.Parent = GUI
@@ -217,6 +244,8 @@ Flight.TextScaled = true
 Flight.TextSize = 14.000
 Flight.TextWrapped = true
 
+UICorner_9.Parent = AdvanceFly
+
 UP.Name = "UP"
 UP.Parent = AdvanceFly
 UP.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
@@ -230,6 +259,8 @@ UP.TextColor3 = Color3.fromRGB(0, 0, 0)
 UP.TextSize = 33.000
 UP.TextWrapped = true
 
+UICorner_10.Parent = UP
+
 DOWN.Name = "DOWN"
 DOWN.Parent = AdvanceFly
 DOWN.BackgroundColor3 = Color3.fromRGB(151, 151, 154)
@@ -242,6 +273,8 @@ DOWN.Text = "DOWN"
 DOWN.TextColor3 = Color3.fromRGB(0, 0, 0)
 DOWN.TextSize = 33.000
 DOWN.TextWrapped = true
+
+UICorner_11.Parent = DOWN
 
 speedText.Name = "speedText"
 speedText.Parent = AdvanceFly
@@ -288,6 +321,8 @@ disable.TextScaled = true
 disable.TextSize = 33.000
 disable.TextWrapped = true
 
+UICorner_12.Parent = disable
+
 Disabling.Name = "Disabling"
 Disabling.Parent = GUI
 Disabling.Active = true
@@ -322,10 +357,70 @@ TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
 
+-- Module Scripts:
+
+local fake_module_scripts = {}
+
+do -- Notifies.Notification
+	local script = Instance.new('ModuleScript', Notifies)
+	script.Name = "Notification"
+	local function module_script()
+		local TweenService = game:GetService("TweenService")
+		local players = game:GetService("Players")
+		
+		local plr = game.Players.LocalPlayer
+		
+		local notificationTemplate = script:WaitForChild("NotificationTemplate")
+		local orgSize = notificationTemplate.Size
+		
+		local module = {}
+		
+		function module.Notify(text,duration)
+			local newNotif = notificationTemplate:Clone()
+			newNotif.Size = UDim2.fromScale(0,0)
+			
+			newNotif.BackgroundTransparency = 1
+			newNotif.TextLabel.Transparency = 1
+			newNotif.TextLabel.Text = text
+			
+			newNotif.Parent = script.Parent
+			
+			TweenService:Create(newNotif,TweenInfo.new(0.6),{BackgroundTransparency = 0}):Play()
+			TweenService:Create(newNotif.TextLabel,TweenInfo.new(1), {TextTransparency = 0}):Play()
+			
+			TweenService:Create(newNotif,TweenInfo.new(0.4,Enum.EasingStyle.Sine,Enum.EasingDirection.Out), {Size = orgSize}):Play()
+			
+			task.wait(duration)
+			
+			TweenService:Create(newNotif,TweenInfo.new(0.6),{BackgroundTransparency = 1}):Play()
+			TweenService:Create(newNotif.TextLabel,TweenInfo.new(1), {TextTransparency = 1}):Play()
+		
+			TweenService:Create(newNotif,TweenInfo.new(0.7,Enum.EasingStyle.Sine,Enum.EasingDirection.Out), {Size = UDim2.fromScale(0,0)}):Play()
+			
+			task.wait(1)
+			
+			newNotif:Destroy() 
+		end
+		
+		return module
+		
+	end
+	fake_module_scripts[script] = module_script
+end
+
+
 -- Scripts:
 
-local function PCBQ_fake_script() -- OpenClose.LocalScript 
+local function GHEW_fake_script() -- OpenClose.LocalScript 
 	local script = Instance.new('LocalScript', OpenClose)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.Parent:WaitForChild("Frame").Draggable = true
 	script.Parent.Parent.Frame.Config.Visible = false
@@ -337,9 +432,17 @@ local function PCBQ_fake_script() -- OpenClose.LocalScript
 		end
 	end)
 end
-coroutine.wrap(PCBQ_fake_script)()
-local function YFBKU_fake_script() -- Disabler.LocalScript 
+coroutine.wrap(GHEW_fake_script)()
+local function QIWNY_fake_script() -- Disabler.LocalScript 
 	local script = Instance.new('LocalScript', Disabler)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Config.Visible = false
@@ -357,9 +460,17 @@ local function YFBKU_fake_script() -- Disabler.LocalScript
 	end)
 	
 end
-coroutine.wrap(YFBKU_fake_script)()
-local function DDGFGB_fake_script() -- Speed.LocalScript 
+coroutine.wrap(QIWNY_fake_script)()
+local function GNWHFC_fake_script() -- Speed.LocalScript 
 	local script = Instance.new('LocalScript', Speed)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.MouseButton1Click:Connect(function()
 		local notif = require(script.Parent.Parent.Parent.Notifies.Notification)
@@ -466,9 +577,17 @@ local function DDGFGB_fake_script() -- Speed.LocalScript
 	end)
 	
 end
-coroutine.wrap(DDGFGB_fake_script)()
-local function ZFMQK_fake_script() -- Fly.LocalScript 
+coroutine.wrap(GNWHFC_fake_script)()
+local function TWNZ_fake_script() -- Fly.LocalScript 
 	local script = Instance.new('LocalScript', Fly)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local UIS = game:GetService("UserInputService")
 	local Humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
@@ -718,9 +837,17 @@ local function ZFMQK_fake_script() -- Fly.LocalScript
 	end)
 	
 end
-coroutine.wrap(ZFMQK_fake_script)()
-local function FRSJFFO_fake_script() -- disableer2.LocalScript 
+coroutine.wrap(TWNZ_fake_script)()
+local function WGHC_fake_script() -- disableer2.LocalScript 
 	local script = Instance.new('LocalScript', disableer2)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.Disabling.Visible = true
@@ -747,10 +874,18 @@ local function FRSJFFO_fake_script() -- disableer2.LocalScript
 	end)
 	
 end
-coroutine.wrap(FRSJFFO_fake_script)()
+coroutine.wrap(WGHC_fake_script)()
 -- nil.DelScript is disabled.
-local function DIANGPJ_fake_script() -- Frame.Smooth GUI Dragging 
+local function HHFNCI_fake_script() -- Frame.Smooth GUI Dragging 
 	local script = Instance.new('LocalScript', Frame)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	local UserInputService = game:GetService("UserInputService")
 	local runService = (game:GetService("RunService"));
@@ -806,38 +941,70 @@ local function DIANGPJ_fake_script() -- Frame.Smooth GUI Dragging
 	
 	runService.Heartbeat:Connect(Update)
 end
-coroutine.wrap(DIANGPJ_fake_script)()
-local function JNQV_fake_script() -- UP.LocalScript 
+coroutine.wrap(HHFNCI_fake_script)()
+local function TBDRGAA_fake_script() -- UP.LocalScript 
 	local script = Instance.new('LocalScript', UP)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.MouseButton1Click:Connect(function()
 		local speed = script.Parent.Parent.speed.Text
 		_G.posY = _G.posY + speed
 	end)
 end
-coroutine.wrap(JNQV_fake_script)()
-local function SHQS_fake_script() -- DOWN.LocalScript 
+coroutine.wrap(TBDRGAA_fake_script)()
+local function ZZBY_fake_script() -- DOWN.LocalScript 
 	local script = Instance.new('LocalScript', DOWN)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.MouseButton1Click:Connect(function()
 		local speed = script.Parent.Parent.speed.Text
 		_G.posY = _G.posY - speed
 	end)
 end
-coroutine.wrap(SHQS_fake_script)()
-local function OEOHTDC_fake_script() -- disable.LocalScript 
+coroutine.wrap(ZZBY_fake_script)()
+local function CTPV_fake_script() -- disable.LocalScript 
 	local script = Instance.new('LocalScript', disable)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.MouseButton1Click:Connect(function()
 		_G.realFly = false
 	end)
 end
-coroutine.wrap(OEOHTDC_fake_script)()
-local function OAEUJUI_fake_script() -- TextButton.LocalScript 
+coroutine.wrap(CTPV_fake_script)()
+local function JYIQWZ_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Visible = false
 	end)
 end
-coroutine.wrap(OAEUJUI_fake_script)()
+coroutine.wrap(JYIQWZ_fake_script)()
